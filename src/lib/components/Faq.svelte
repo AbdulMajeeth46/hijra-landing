@@ -44,11 +44,11 @@
     ];
 </script>
 
-<section class="w-full bg-white text-[#1B1B1B] py-24 px-6 md:px-12 font-['Urbanist'] antialiased">
+<section class="w-full bg-white text-[#1B1B1B] py-20 md:py-24 px-6 md:px-12 font-['Urbanist'] antialiased">
     
     <div class="max-w-[1200px] mx-auto">
         
-        <div class="mb-20 border-b border-gray-100 pb-10">
+        <div class="mb-16 md:mb-20 border-b border-gray-100 pb-10">
             <h1 class="text-4xl md:text-6xl font-medium tracking-tight text-black mb-4">
                 Your questions, <span class="text-[#00B77A]">answered.</span>
             </h1>
@@ -59,7 +59,7 @@
         
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
             
-            <div class="lg:col-span-4 lg:sticky lg:top-24">
+            <div class="lg:col-span-4 lg:sticky lg:top-24 order-last lg:order-first">
                 
                 <span class="text-[#00B77A] font-semibold tracking-widest uppercase text-[11px] mb-5 block">
                     Key Information
@@ -106,20 +106,20 @@
 
             </div>
 
-            <div class="lg:col-span-8">
-                <div class="w-full">
+            <div class="lg:col-span-8 w-full">
+                <div class="w-full border-t border-gray-100">
                     {#each faqs as faq, i}
-                        <div class="border-b border-gray-100 last:border-0">
+                        <div class="border-b border-gray-100 transition-colors duration-300 {openIndex === i ? 'bg-gray-50/50' : 'bg-transparent'}">
                             
                             <button 
                                 on:click={() => toggle(i)} 
-                                class="group w-full flex items-start justify-between gap-6 py-6 px-5 -mx-5 rounded-2xl transition-all duration-300 hover:bg-gray-50 text-left focus:outline-none"
+                                class="group w-full flex items-start justify-between gap-4 py-5 md:py-6 text-left focus:outline-none"
                             >
-                                <span class="text-[17px] font-medium tracking-tight transition-colors duration-300 group-hover:text-black {openIndex === i ? '!text-[#00B77A]' : 'text-[#1B1B1B]'}">
+                                <span class="text-[16px] md:text-[18px] font-medium tracking-tight leading-snug transition-colors duration-300 w-full pr-4 {openIndex === i ? 'text-[#00B77A]' : 'text-[#1B1B1B]'}">
                                     {faq.question}
                                 </span>
 
-                                <span class="relative flex items-center justify-center w-6 h-6 shrink-0 mt-0.5">
+                                <span class="relative flex items-center justify-center w-6 h-6 shrink-0 mt-0.5 md:mt-1">
                                     <div class="transition-transform duration-300 {openIndex === i ? 'rotate-45' : 'rotate-0'}">
                                         <Icon 
                                             icon="heroicons:plus" 
@@ -131,7 +131,7 @@
 
                             {#if openIndex === i}
                                 <div transition:slide={{ duration: 300, axis: 'y' }}>
-                                    <p class="text-gray-500 text-[15px] leading-relaxed pb-8 px-5 -mx-5 md:pr-16">
+                                    <p class="text-gray-500 text-[15px] md:text-base leading-relaxed pb-8 pr-4 md:pr-16">
                                         {faq.answer}
                                     </p>
                                 </div>
