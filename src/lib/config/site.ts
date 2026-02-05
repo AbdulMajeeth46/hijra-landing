@@ -315,7 +315,7 @@ export const siteConfig = {
         {
             label: 'Company',
             items: [
-                { label: 'About PBIS', href: '#' },
+                { label: 'About WURKS', href: '#' },
                 { label: 'Our Mission', href: '#' },
                 { label: 'Testimonials', href: '#' }
             ]
