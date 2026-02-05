@@ -10,14 +10,14 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-24 items-center">
                 
                 <div class="lg:col-span-7">
-                    <h1 class="text-[clamp(6rem,25vw,20rem)] font-bold tracking-tighter leading-[0.8] text-(--foreground) -ml-[0.05em] select-none opacity-0 translate-y-4 animate-fade-in-up">
+                    <h1 class="text-[clamp(6rem,25vw,20rem)] font-bold tracking-tighter leading-[0.8] text-(--foreground) -ml-[0.05em] select-none opacity-0 animate-fade-in-up will-change-transform">
                         404<span class="text-(--primary)">.</span>
                     </h1>
                 </div>
 
                 <div class="lg:col-span-5 flex flex-col">
                     
-                    <div class="space-y-6 md:space-y-8 opacity-0 translate-y-4 animate-fade-in-up delay-100">
+                    <div class="space-y-6 md:space-y-8 opacity-0 animate-fade-in-up delay-200 will-change-transform">
                         <h2 class="text-4xl md:text-5xl lg:text-7xl font-medium tracking-tight leading-[1.05] text-(--foreground)">
                             Nothing <br />
                             <span class="text-(--muted)">to see here.</span>
@@ -28,7 +28,7 @@
                         </p>
                     </div>
 
-                    <div class="mt-12 lg:mt-24 opacity-0 translate-y-4 animate-fade-in-up delay-200">
+                    <div class="mt-12 lg:mt-24 opacity-0 animate-fade-in-up delay-300 will-change-transform">
                          <a href="/" 
                            class="group inline-flex items-center gap-3 px-8 py-4 bg-(--background) text-(--foreground) rounded-full text-sm font-bold tracking-widest uppercase border border-(--border)
                                   transition-all duration-300 ease-out
