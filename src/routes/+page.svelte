@@ -1,13 +1,11 @@
 <script>
- 
-// import Footer from '$lib/components/Footer.svelte';
-import Cta from '$lib/components/Cta.svelte';
-import Faq from '$lib/components/Faq.svelte';
-import Testimonials from '$lib/components/Testimonials.svelte';
-import Process from '$lib/components/Process.svelte';
-import Stats from '$lib/components/Stats.svelte';
-import Hero from '$lib/components/Hero.svelte';
-
+  import Hero from '$lib/components/Hero.svelte';
+  import Stats from '$lib/components/Stats.svelte';
+  import Process from '$lib/components/Process.svelte';
+  import Testimonials from '$lib/components/Testimonials.svelte';
+  import Faq from '$lib/components/Faq.svelte';
+  
+  // Navbar and Footer are handled in +layout.svelte
 </script>
 
 <Hero />
@@ -15,5 +13,3 @@ import Hero from '$lib/components/Hero.svelte';
 <Process />
 <Testimonials />
 <Faq />
-<Cta />
-<!-- <Footer /> -->

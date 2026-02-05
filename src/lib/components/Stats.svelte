@@ -1,27 +1,7 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
+  import { siteConfig } from '$lib/config/site';
   
-  const stats = [
-    {
-      value: "10",
-      suffix: "+",
-      label: "Years Experience",
-      desc: "Serving the guests of Allah since 2010."
-    },
-    {
-      value: "15",
-      suffix: "+",
-      label: "Global Reach",
-      desc: "Pilgrims served from over 15 different nations."
-    },
-    {
-      value: "100",
-      suffix: "%",
-      label: "Satisfaction",
-      desc: "Based on post-Hajj feedback surveys."
-    }
-  ];
-
   let visible = false;
   onMount(() => visible = true);
 </script>
@@ -32,17 +12,17 @@
     <div class="flex flex-col lg:flex-row justify-between items-start gap-20 lg:gap-12">
       
       <div class="lg:w-1/3 pt-4">
-        <h3 class="text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] mb-6">
-          Built on <br />
-          <span class="text-[#00B77A]">trust & tradition.</span>
+        <h3 class="text-3xl md:text-5xl font-semibold tracking-tight leading-[1.1] mb-6">
+            {siteConfig.stats.heading} <br />
+          <span class="text-[#00B77A]">{siteConfig.stats.highlight}</span>
         </h3>
         <p class="text-gray-500 text-lg leading-relaxed">
-          Numbers aren't just metrics to us; they represent individual spiritual journeys facilitated with precision, care, and the Amanah (trust) placed in our hands.
+            {siteConfig.stats.description}
         </p>
       </div>
 
       <div class="lg:w-2/3 w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-0">
-        {#each stats as stat, i}
+        {#each siteConfig.stats.items as stat}
           <div class="group relative flex flex-col md:px-8 first:pl-0 border-t border-gray-200 hover:border-[#00B77A] transition-colors duration-500 cursor-default">
             
             <div class="pt-6 mb-4 flex justify-between items-center">

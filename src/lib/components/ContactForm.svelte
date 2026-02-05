@@ -1,15 +1,14 @@
-<script>
+<script lang="ts">
   import Icon from '@iconify/svelte';
+  import { siteConfig } from '$lib/config/site';
   
   let formData = {
     name: '',
     email: '',
     phone: '',
-    interest: 'Hajj Package',
+    interest: siteConfig.contactPage.form.interests[0],
     message: ''
   };
-
-  const interests = ['Hajj Package', 'Umrah Package', 'Custom Tour', 'Visa Only'];
 
   const handleSubmit = () => {
     console.log('Form Submitted', formData);
@@ -25,11 +24,11 @@
         
         <div>
           <h3 class="text-3xl md:text-4xl font-semibold tracking-tighter mb-4 leading-[1.1]">
-            Get in touch <br />
-            <span class="text-[#00B77A]">directly.</span>
+            {siteConfig.contactPage.form.heading} <br />
+            <span class="text-[#00B77A]">{siteConfig.contactPage.form.highlight}</span>
           </h3>
           <p class="text-gray-500 leading-relaxed text-lg font-medium max-w-sm">
-            Prefer to speak to a human? Our support team in Jeddah is available 24/7 to assist you.
+            {siteConfig.contactPage.form.description}
           </p>
         </div>
 
@@ -40,10 +39,12 @@
                 <div class="w-8 h-8 rounded-full bg-[#00B77A]/10 flex items-center justify-center text-[#00B77A]">
                   <Icon icon="heroicons:envelope" class="w-4 h-4" />
                 </div>
-                <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Email Address</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-400">
+                    {siteConfig.contactPage.form.labels.sidebarEmail}
+                </span>
              </div>
-             <a href="mailto:salam@hijra.com" class="text-2xl md:text-3xl font-medium tracking-tight text-[#1B1B1B] hover:text-[#00B77A] transition-colors block break-all">
-               salam@hijra.com
+             <a href="mailto:{siteConfig.brand.contact.email}" class="text-2xl md:text-3xl font-medium tracking-tight text-[#1B1B1B] hover:text-[#00B77A] transition-colors block break-all">
+               {siteConfig.brand.contact.email}
              </a>
           </div>
 
@@ -52,10 +53,12 @@
                 <div class="w-8 h-8 rounded-full bg-[#00B77A]/10 flex items-center justify-center text-[#00B77A]">
                   <Icon icon="heroicons:phone" class="w-4 h-4" />
                 </div>
-                <span class="text-xs font-bold uppercase tracking-widest text-gray-400">WhatsApp / Call</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-400">
+                    {siteConfig.contactPage.form.labels.sidebarPhone}
+                </span>
              </div>
-             <a href="tel:+966500000000" class="text-2xl md:text-3xl font-medium tracking-tight text-[#1B1B1B] hover:text-[#00B77A] transition-colors block">
-               +966 50 000 0000
+             <a href="tel:{siteConfig.brand.contact.phone.replace(/\s+/g, '')}" class="text-2xl md:text-3xl font-medium tracking-tight text-[#1B1B1B] hover:text-[#00B77A] transition-colors block">
+               {siteConfig.brand.contact.phone}
              </a>
           </div>
 
@@ -67,21 +70,25 @@
           
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
             <div class="flex flex-col gap-2">
-              <label for="name" class="text-xs font-bold uppercase tracking-widest text-gray-400">Full Name</label>
+              <label for="name" class="text-xs font-bold uppercase tracking-widest text-gray-400">
+                  {siteConfig.contactPage.form.labels.name}
+              </label>
               <input 
                 type="text" 
                 id="name" 
-                placeholder="e.g. Yusuf Ahmed"
+                placeholder={siteConfig.contactPage.form.placeholders.name}
                 bind:value={formData.name}
                 class="w-full bg-transparent border-b border-gray-200 py-4 text-lg font-medium text-[#1B1B1B] focus:outline-none focus:border-[#00B77A] transition-colors placeholder-gray-300"
               />
             </div>
             <div class="flex flex-col gap-2">
-              <label for="email" class="text-xs font-bold uppercase tracking-widest text-gray-400">Email Address</label>
+              <label for="email" class="text-xs font-bold uppercase tracking-widest text-gray-400">
+                  {siteConfig.contactPage.form.labels.email}
+              </label>
               <input 
                 type="email" 
                 id="email" 
-                placeholder="name@example.com"
+                placeholder={siteConfig.contactPage.form.placeholders.email}
                 bind:value={formData.email}
                 class="w-full bg-transparent border-b border-gray-200 py-4 text-lg font-medium text-[#1B1B1B] focus:outline-none focus:border-[#00B77A] transition-colors placeholder-gray-300"
               />
@@ -90,24 +97,28 @@
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
             <div class="flex flex-col gap-2">
-              <label for="phone" class="text-xs font-bold uppercase tracking-widest text-gray-400">Phone Number</label>
+              <label for="phone" class="text-xs font-bold uppercase tracking-widest text-gray-400">
+                  {siteConfig.contactPage.form.labels.phone}
+              </label>
               <input 
                 type="tel" 
                 id="phone" 
-                placeholder="+1 (555) 000-0000"
+                placeholder={siteConfig.contactPage.form.placeholders.phone}
                 bind:value={formData.phone}
                 class="w-full bg-transparent border-b border-gray-200 py-4 text-lg font-medium text-[#1B1B1B] focus:outline-none focus:border-[#00B77A] transition-colors placeholder-gray-300"
               />
             </div>
             <div class="flex flex-col gap-2 relative">
-              <label for="interest" class="text-xs font-bold uppercase tracking-widest text-gray-400">Interested In</label>
+              <label for="interest" class="text-xs font-bold uppercase tracking-widest text-gray-400">
+                  {siteConfig.contactPage.form.labels.interest}
+              </label>
               <div class="relative">
                 <select 
                   id="interest"
                   bind:value={formData.interest}
                   class="w-full bg-transparent border-b border-gray-200 py-4 text-lg font-medium text-[#1B1B1B] focus:outline-none focus:border-[#00B77A] transition-colors appearance-none cursor-pointer rounded-none"
                 >
-                  {#each interests as interest}
+                  {#each siteConfig.contactPage.form.interests as interest}
                     <option value={interest}>{interest}</option>
                   {/each}
                 </select>
@@ -119,11 +130,13 @@
           </div>
 
           <div class="flex flex-col gap-2">
-            <label for="message" class="text-xs font-bold uppercase tracking-widest text-gray-400">Your Message</label>
+            <label for="message" class="text-xs font-bold uppercase tracking-widest text-gray-400">
+                {siteConfig.contactPage.form.labels.message}
+            </label>
             <textarea 
               id="message" 
               rows="4"
-              placeholder="Tell us about your plans..."
+              placeholder={siteConfig.contactPage.form.placeholders.message}
               bind:value={formData.message}
               class="w-full bg-transparent border-b border-gray-200 py-4 text-lg font-medium text-[#1B1B1B] focus:outline-none focus:border-[#00B77A] transition-colors placeholder-gray-300 resize-none"
             ></textarea>
@@ -138,7 +151,7 @@
                      hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[5px_5px_0px_0px_#00B77A]
                      active:translate-x-0 active:translate-y-0 active:shadow-none"
             >
-              <span>Send Message</span>
+              <span>{siteConfig.contactPage.form.labels.submit}</span>
               <Icon icon="heroicons:paper-airplane" class="w-4 h-4" />
             </button>
           </div>

@@ -1,5 +1,6 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
+  import { siteConfig } from '$lib/config/site';
   
   let mounted = false;
   onMount(() => mounted = true);
@@ -10,17 +11,17 @@
     
     <div class="opacity-0 translate-y-4 animate-fade-in-up mb-6 flex justify-center">
       <span class="px-4 py-1.5 rounded-full border border-gray-100 bg-gray-50 text-[11px] font-bold uppercase tracking-[0.2em] text-[#00B77A]">
-        About Us
+        {siteConfig.aboutPage.header.badge}
       </span>
     </div>
 
     <h1 class="opacity-0 translate-y-4 animate-fade-in-up delay-100 text-5xl md:text-7xl font-semibold tracking-tighter leading-[1.1] mb-8 text-[#1B1B1B]">
-      Bridging the <br class="hidden md:block" />
-      <span class="text-[#00B77A]">distance.</span>
+      {siteConfig.aboutPage.header.heading} <br class="hidden md:block" />
+      <span class="text-[#00B77A]">{siteConfig.aboutPage.header.highlight}</span>
     </h1>
 
     <p class="opacity-0 translate-y-4 animate-fade-in-up delay-200 text-lg md:text-xl text-gray-500 leading-relaxed font-medium max-w-2xl mx-auto">
-      We exist to remove the worldly obstacles between you and the Sacred House. Founded on trust, delivered with excellence.
+      {siteConfig.aboutPage.header.description}
     </p>
 
   </div>

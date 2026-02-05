@@ -1,1 +1,95 @@
 @import 'tailwindcss';
+
+@theme {
+  /* COLORS: Mapped to CSS Variables for runtime theming */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+   
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+
+  --font-display: 'Urbanist', sans-serif;
+  --font-body: 'Urbanist', sans-serif;
+
+  /* ANIMATIONS */
+  --animate-fade-in: fadeIn 0.3s ease-out forwards;
+  --animate-fade-in-up: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-marquee: marquee 50s linear infinite;
+
+  @keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+/* TYPOGRAPHY HIERARCHY - The "Kingmaker" Standard */
+@layer components {
+  /* Massive Hero Text */
+  .type-display {
+    @apply text-5xl md:text-7xl lg:text-[7.5rem] font-semibold tracking-tighter leading-none md:leading-[0.9];
+  }
+  
+  /* Section Headers (e.g. "Bridging the distance") */
+  .type-h1 {
+    @apply text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tighter leading-[1.1];
+  }
+  
+  /* Card Titles / Feature Names */
+  .type-h2 {
+    @apply text-2xl md:text-3xl font-semibold tracking-tight leading-tight;
+  }
+  
+  /* Lead Paragraphs */
+  .type-body-lg {
+    @apply text-lg md:text-xl font-medium leading-relaxed text-muted;
+  }
+  
+  /* Standard Text */
+  .type-body {
+    @apply text-base font-normal leading-relaxed text-muted;
+  }
+  
+  /* Small UI Labels / Badges */
+  .type-label {
+    @apply text-[11px] font-bold uppercase tracking-[0.2em];
+  }
+}
+
+/* THEME VARIABLES */
+:root {
+  /* Primary Brand Color (Green) */
+  --primary: #00B77A; 
+  --primary-foreground: #ffffff;
+  
+  /* Surface Colors (Cards, Sidebars) */
+  --surface: #F9F9F9;
+  --surface-hover: #F0F0F0;
+
+  /* Base Layout Colors */
+  --background: #ffffff;
+  --foreground: #1B1B1B;
+
+  /* Text & Border Utilities */
+  --muted: #6b7280; /* Gray-500 */
+  --border: #e5e7eb; /* Gray-200 */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}

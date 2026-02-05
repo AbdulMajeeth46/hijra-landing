@@ -1,11 +1,12 @@
-<script>
+<script lang="ts">
   import ContactHeader from '$lib/components/ContactHeader.svelte';
-  import ContactForm from '$lib/components/ContactForm.svelte'; // Renamed for clarity
+  import ContactForm from '$lib/components/ContactForm.svelte';
+  import { siteConfig } from '$lib/config/site';
 </script>
 
 <svelte:head>
-  <title>Contact Us | Hijra</title>
+  <title>Contact Us | {siteConfig.brand.name}</title>
 </svelte:head>
 
-  <ContactHeader />
-  <ContactForm />
+<ContactHeader />
+<ContactForm />
