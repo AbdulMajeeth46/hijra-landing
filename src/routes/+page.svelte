@@ -5,7 +5,6 @@
   import Testimonials from '$lib/components/Testimonials.svelte';
   import Faq from '$lib/components/Faq.svelte';
   
-  // Navbar and Footer are handled in +layout.svelte
 </script>
 
 <Hero />

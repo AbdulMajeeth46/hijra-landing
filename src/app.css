@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-  /* COLORS: Mapped to CSS Variables for runtime theming */
+  /* COLORS */
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   
@@ -26,7 +26,7 @@
     from { opacity: 0; } to { opacity: 1; }
   }
   @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
+    from { opacity: 0; transform: translateY(1.875rem); }
     to { opacity: 1; transform: translateY(0); }
   }
   @keyframes marquee {
@@ -35,14 +35,14 @@
   }
 }
 
-/* TYPOGRAPHY HIERARCHY - The "Kingmaker" Standard */
+/* TYPOGRAPHY*/
 @layer components {
-  /* Massive Hero Text */
+  /*  Hero Text */
   .type-display {
     @apply text-5xl md:text-7xl lg:text-[7.5rem] font-semibold tracking-tighter leading-none md:leading-[0.9];
   }
   
-  /* Section Headers (e.g. "Bridging the distance") */
+  /* Section Headers  */
   .type-h1 {
     @apply text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tighter leading-[1.1];
   }
@@ -64,7 +64,7 @@
   
   /* Small UI Labels / Badges */
   .type-label {
-    @apply text-[11px] font-bold uppercase tracking-[0.2em];
+    @apply text-[0.6875rem] font-bold uppercase tracking-[0.2em];
   }
 }
 
@@ -83,8 +83,8 @@
   --foreground: #1B1B1B;
 
   /* Text & Border Utilities */
-  --muted: #6b7280; /* Gray-500 */
-  --border: #e5e7eb; /* Gray-200 */
+  --muted: #6b7280; 
+  --border: #e5e7eb; 
 }
 
 body {

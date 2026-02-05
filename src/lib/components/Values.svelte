@@ -2,26 +2,26 @@
   import { siteConfig } from '$lib/config/site';
 </script>
 
-<section class="w-full bg-white text-[#1B1B1B] font-['Urbanist'] py-24 px-6 md:px-12 border-b border-gray-100">
-  <div class="max-w-[1400px] mx-auto">
+<section class="w-full bg-(--background) text-(--foreground) font-body py-24 px-6 md:px-12 border-b border-(--border)">
+  <div class="max-w-350 mx-auto">
     
     <div class="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
       
-      <h2 class="text-5xl md:text-7xl font-normal tracking-tight text-[#1B1B1B] leading-none">
-        {siteConfig.values.heading} <span class="text-[#00B77A]">{siteConfig.values.highlight}</span>
+      <h2 class="text-5xl md:text-7xl font-normal tracking-tight text-(--foreground) leading-none">
+        {siteConfig.values.heading} <span class="text-(--primary)">{siteConfig.values.highlight}</span>
       </h2>
 
       <div class="pb-1">
-        <p class="text-gray-500 text-lg md:text-xl font-medium max-w-sm leading-relaxed text-left md:text-right">
+        <p class="text-(--muted) text-lg md:text-xl font-medium max-w-sm leading-relaxed text-left md:text-right">
           {siteConfig.values.description}
         </p>
       </div>
       
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-auto md:h-[900px]">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-auto md:h-225">
       {#each siteConfig.values.items as item}
-        <div class="group relative w-full h-[500px] md:h-full rounded-4xl overflow-hidden bg-gray-100">
+        <div class="group relative w-full h-125 md:h-full rounded-4xl overflow-hidden bg-(--surface)">
           
           <img 
             src={item.img} 
@@ -44,7 +44,7 @@
             <p class="text-gray-200 text-base md:text-lg leading-relaxed font-medium opacity-90">
               {item.desc}
             </p>
-            <div class="w-12 h-1 bg-[#00B77A] mt-6"></div>
+            <div class="w-12 h-1 bg-(--primary) mt-6"></div>
           </div>
 
         </div>

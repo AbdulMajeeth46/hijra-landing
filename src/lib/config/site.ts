@@ -1,5 +1,5 @@
 export const siteConfig = {
-    // --- GLOBAL BRANDING ---
+    //   BRANDING 
     brand: {
         name: "Hijra",
         logo: "/favicon.svg", 
@@ -17,7 +17,7 @@ export const siteConfig = {
         }
     },
 
-    // --- NAVIGATION ---
+    //  NAVIGATION 
     nav: [
         { label: 'Home', href: '/' },
         { label: 'About', href: '/about' },
@@ -25,7 +25,7 @@ export const siteConfig = {
         { label: 'Contact', href: '/contact' }
     ],
 
-    // --- HERO SECTION ---
+    //  HERO SECTION 
     hero: {
         badge: "Hajj 2026",
         badgeSub: "Registrations Open",
@@ -46,7 +46,7 @@ export const siteConfig = {
         ]
     },
 
-    // --- CTA SECTION ---
+    //  CTA 
     cta: {
         heading: "Ready to start your",
         highlight: "sacred journey?",
@@ -55,7 +55,7 @@ export const siteConfig = {
         buttonLink: "/contact"
     },
 
-    // --- ABOUT PAGE (New) ---
+    //  ABOUT PAGE 
     aboutPage: {
         header: {
             badge: "About Us",
@@ -71,7 +71,7 @@ export const siteConfig = {
         }
     },
 
-    // --- CONTACT PAGE ---
+    //  CONTACT PAGE 
     contactPage: {
         header: {
             badge: "Contact Us",
@@ -103,7 +103,7 @@ export const siteConfig = {
         }
     },
 
-    // --- STATS SECTION ---
+    //  STATS 
     stats: {
         heading: "Built on",
         highlight: "trust & tradition.",
@@ -130,7 +130,7 @@ export const siteConfig = {
         ]
     },
 
-    // --- PROCESS SECTION ---
+    //  PROCESS SECTION 
     process: {
         label: "The Roadmap",
         heading: "Your path to the",
@@ -154,7 +154,7 @@ export const siteConfig = {
         ]
     },
 
-    // --- VALUES SECTION ---
+    //  VALUES SECTION 
     values: {
         heading: "Guiding",
         highlight: "Principles.",
@@ -187,7 +187,7 @@ export const siteConfig = {
         ]
     },
 
-    // --- TEAM SECTION ---
+    //  TEAM SECTION 
     team: {
         heading: "Leadership.",
         description: "The experts ensuring your peace of mind.",
@@ -199,7 +199,7 @@ export const siteConfig = {
         ]
     },
 
-    // --- FAQ SECTION ---
+    //  FAQ SECTION 
     faq: {
         heading: "Your questions,",
         highlight: "answered.",
@@ -252,7 +252,7 @@ export const siteConfig = {
         ]
     },
 
-    // --- TESTIMONIALS SECTION ---
+    //  TESTIMONIALS SECTION 
     testimonials: {
         label: "Testimonials",
         heading: "Trusted by the",
@@ -296,7 +296,7 @@ export const siteConfig = {
         ]
     },
 
-    // --- FOOTER SECTION ---
+    //  FOOTER SECTION 
     socials: [
         { icon: 'mdi:linkedin', color: '#0077b5', label: 'LinkedIn', href: '#' },
         { icon: 'mdi:instagram', color: '#E4405F', label: 'Instagram', href: '#' },
